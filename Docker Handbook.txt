@@ -1,0 +1,15 @@
+Copy file from host machine to docker container and vice-versa:
+--------------------------------------------------------------
+sudo docker cp foo.txt mycontainer:/foo.txt
+sudo docker cp mycontainer:/foo.txt foo.txt
+
+docker cp mycontainer:/foo.txt foo.txt
+
+
+Error response from daemon: container '<>' is not running:
+---------------------------------------------------------
+By default, docker container will exit immediately if you do not have any task running on the container.
+To keep the container running in the background, try to run it with --detach (or -d) argument.
+
+For examples:
+docker run -t -d <container>
